@@ -74,7 +74,7 @@ useMeta({
           </ul>
           <p>
             {{ $t('privacy.s7contact') }}
-            <a href="mailto:info@medcoregroup.kz">info@medcoregroup.kz</a>
+            <a href="mailto:MedCore_Group@mail.ru">MedCore_Group@mail.ru</a>
           </p>
         </section>
 
@@ -84,7 +84,7 @@ useMeta({
             ТОО «MedCore Group»<br />
             г. Усть-Каменогорск, ВКО, Республика Казахстан<br />
             Тел.: <a href="tel:+77752540351">+7 775 254 03 51</a><br />
-            E-mail: <a href="mailto:info@medcoregroup.kz">info@medcoregroup.kz</a>
+            E-mail: <a href="mailto:MedCore_Group@mail.ru">MedCore_Group@mail.ru</a>
           </p>
         </section>
       </div>

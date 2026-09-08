@@ -30,7 +30,7 @@ useMeta({
         url: 'https://www.medcoregroup.kz',
         logo: 'https://www.medcoregroup.kz/favicon.svg',
         telephone: '+77752540351',
-        email: 'info@medcoregroup.kz',
+        email: 'MedCore_Group@mail.ru',
         knowsAbout: [
           'Медицинское оборудование',
           'ЛОР-комбайны',
