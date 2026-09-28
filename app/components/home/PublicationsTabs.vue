@@ -6,8 +6,10 @@ import { usePublicationsDataStore } from '@/stores/publicationsData'
 const store = usePublicationsDataStore()
 onMounted(() => store.load())
 
+const HOME_LIMIT = 8
+
 const tab = ref<'article' | 'media'>('article')
-const items = computed(() => store.items.filter((p) => p.type === tab.value))
+const items = computed(() => store.items.filter((p) => p.type === tab.value).slice(0, HOME_LIMIT))
 </script>
 
 <template>
@@ -31,6 +33,14 @@ const items = computed(() => store.items.filter((p) => p.type === tab.value))
           <p>{{ p.excerpt }}</p>
         </div>
       </component>
+    </div>
+    <div class="more">
+      <RouterLink to="/news" class="more-link">
+        {{ $t('home.blogShowAll') }}
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -114,5 +124,41 @@ a.card {
   font-size: 14px;
   color: var(--color-text-muted);
   line-height: 1.5;
+}
+
+.more {
+  margin-top: var(--space-5);
+  display: flex;
+  justify-content: center;
+}
+
+.more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-border-strong, #c8c2b6);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.more-link:hover {
+  background: #fff;
+  border-color: var(--color-text);
+}
+
+.more-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+}
+
+.more-link:hover svg {
+  transform: translateX(3px);
 }
 </style>
